@@ -12,3 +12,5 @@ app.use("/whatsup", apiRoute);
 app.listen(PORT, () =>{
     console.log("server is running at port:", + PORT)
 });
+
+module.exports = app;

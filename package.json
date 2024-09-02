@@ -1,7 +1,6 @@
 {
   "name": "chatboat",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index.js",
@@ -12,5 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
