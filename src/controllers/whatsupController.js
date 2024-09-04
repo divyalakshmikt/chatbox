@@ -32,13 +32,13 @@ const RecivedMessage = async(req,res)=>{
             let messages = messageObject[0];
             let number = messages["from"]
 
-            let text = await GetTextUser(messages)
+            let text =  GetTextUser(messages)
             
-            console.log("----text ------:", text);
-            console.log("-----messageObject-----:",messageObject);
+            // console.log("----text ------:", text);
+            // console.log("-----messageObject-----:",messageObject);
         
             // call the service
-           await whatsappService.SendMessageToWhatsApp("hi divya  ..:" + text, number)
+            whatsappService.SendMessageToWhatsApp("hi divya  ..:" + text, number)
         }
        
        
@@ -52,29 +52,33 @@ const RecivedMessage = async(req,res)=>{
 
 
 function GetTextUser(messages){
+
     let text =""
     let typeMessage = messages["type"];
     if(typeMessage== "text"){
-        text = (messages["text"])[body];
+        text = (messages["text"])["body"];
 
     }else if(typeMessage=="interactive"){
+        
         let interactiveObject = messages["interactive"];
         let typeInteractive = interactiveObject["type"];
-
-        console.log("------interactiveObject----:",interactiveObject);
          
         if(typeInteractive == "button_reply"){
+           
             text = (interactiveObject["button_reply"])["title"]
 
         }else if(typeInteractive == "list_reply"){
+           
             text = (interactiveObject["list_reply"])["title"]
         }else{
+           
             console.log("---No Messagess-----");
         }
 
 
 
     }else{
+       
         console.log("---No Messagess-----");
     }
 
