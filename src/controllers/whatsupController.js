@@ -32,7 +32,7 @@ const RecivedMessage =(req,res)=>{
 
             let text = GetTextUser(messages)
             
-            console.log("----text ------:", text);
+            // console.log("----text ------:", text);
             console.log("-----messageObject-----:",messageObject);
         
             // call the service
