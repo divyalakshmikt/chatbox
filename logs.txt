@@ -1,0 +1,11 @@
+ReferenceError: body is not defined
+    at GetTextUser (/home/divya/Desktop/chatbox/src/controllers/whatsupController.js:56:35)
+    at RecivedMessage (/home/divya/Desktop/chatbox/src/controllers/whatsupController.js:33:24)
+    at Layer.handle [as handle_request] (/home/divya/Desktop/chatbox/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/divya/Desktop/chatbox/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/divya/Desktop/chatbox/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/divya/Desktop/chatbox/node_modules/express/lib/router/layer.js:95:5)
+    at /home/divya/Desktop/chatbox/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/divya/Desktop/chatbox/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/divya/Desktop/chatbox/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/home/divya/Desktop/chatbox/node_modules/express/lib/router/index.js:175:3)

@@ -1,5 +1,4 @@
-const { error } = require("console");
-const http = require("https");
+const https = require("https");
 
 function SendMessageToWhatsApp(textResponse, number){
     const data =JSON.stringify({
@@ -18,11 +17,11 @@ function SendMessageToWhatsApp(textResponse, number){
         body:data,
         headers:{
             "Content-Type":"application/json",
-            Authorization:"Bearer EAAL6fZB8MBzEBOZB5ADMYN03o0hxfINZCGRaUQZCtcgj8dVzLe4lNQfX64DXVJL9Hj8fZCbnvbwP9bXt410Be1ACskG0y21Il39TyCbuFOmZA6ZCLhHh3jNYUq1BKDx0BTbplrLohywME8vBIJlvXV01IVwb2UbjZC4JZCpdSieX9m8aJaLAkYp8bMdvcTqwvZBh1HtXctagGPjmpWbCHPSXwZD"
+            Authorization:"Bearer EAAL6fZB8MBzEBO5XEA4GwfUS0uuqlHzLHIP2KGTwuZCOSgrZCNLrQ2vIO9IG3q0RssPX8mm7y3s1NZAd9W7JbwN4YZB0ZBf0Ux5rrxUlLsodcrmel8wwgAFiaku9Su0oHDlGrIhflLZCNxVFzLFVsHVhIvj36zgN1GcrJ7EQVgkFGYCMPv7d5oPwh3zfzZCMbu50"
         }
     };
 
-    const req = http.request(options,res=>{
+    const req = https.request(options,res=>{
         res.on("data", d=>{
             process.stdout.write(d);
         });
