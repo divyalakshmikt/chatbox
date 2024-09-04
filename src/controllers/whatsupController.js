@@ -19,7 +19,7 @@ const verifyToken =(req,res)=>{
     }
 }
 
-const RecivedMessage =(req,res)=>{
+const RecivedMessage = async(req,res)=>{
     try {
         let entry= (req.body["entry"])[0];       
         let changes = (entry["changes"])[0];       
@@ -32,13 +32,13 @@ const RecivedMessage =(req,res)=>{
             let messages = messageObject[0];
             let number = messages["from"]
 
-            let text = GetTextUser(messages)
+            let text = await GetTextUser(messages)
             
             console.log("----text ------:", text);
             console.log("-----messageObject-----:",messageObject);
         
             // call the service
-            whatsappService.SendMessageToWhatsApp("hi divya  ..:" + text, number)
+           await whatsappService.SendMessageToWhatsApp("hi divya  ..:" + text, number)
         }
        
        
