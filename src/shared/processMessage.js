@@ -2,7 +2,7 @@ const whatsappModel = require("../shared/whatsappModel")
 const whatsappService = require("../services/whatsAppService")
 
 function Process(textUser, number){
-  let textUser = textUser.toLowerCase();
+   textUser = textUser.toLowerCase();
   let models=[];
   if(textUser.includes("hello")){
     let model = whatsappModel.messageText("Hello, what can i do for you ?.", number)
