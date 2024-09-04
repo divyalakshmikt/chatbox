@@ -26,13 +26,15 @@ const RecivedMessage =(req,res)=>{
         let value = changes["value"];
         let messageObject = value["messages"];
 
+        console.log("---body ---:", messageObject);
+
         if(typeof messageObject != "undefined"){
             let messages = messageObject[0];
             let number = messages["from"]
 
             let text = GetTextUser(messages)
             
-            // console.log("----text ------:", text);
+            console.log("----text ------:", text);
             console.log("-----messageObject-----:",messageObject);
         
             // call the service
