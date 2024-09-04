@@ -33,10 +33,10 @@ const RecivedMessage =(req,res)=>{
             let text = GetTextUser(messages)
             
             console.log("----text ------:", text);
-            // console.log("-----messageObject-----:",messageObject);
+            console.log("-----messageObject-----:",messageObject);
         
             // call the service
-            // whatsappService.SendMessageToWhatsApp(text, number)
+            whatsappService.SendMessageToWhatsApp("hi divya  ..:" + text, number)
         }
        
        
