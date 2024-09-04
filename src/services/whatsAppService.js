@@ -1,15 +1,7 @@
 const https = require("https");
 
-function SendMessageToWhatsApp(textResponse, number){
-    const data =JSON.stringify({
-        "messaging_product": "whatsapp",
-        "to": number,
-        "type": "text",
-        "text": {
-            "body": textResponse
-        },
-       
-    });
+function SendMessageToWhatsApp(data){
+    
 
     let options ={
         host: "graph.facebook.com",

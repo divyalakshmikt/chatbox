@@ -2,6 +2,8 @@ const fs = require("fs");
 const myConsole = new console.Console(fs.createWriteStream("./logs.txt"))
 
 const whatsappService = require("../services/whatsAppService")
+const SampleModel =  require("../shared/sampleModels")
+
 
 const verifyToken =(req,res)=>{
     try {
@@ -37,8 +39,42 @@ const RecivedMessage = async(req,res)=>{
             // console.log("----text ------:", text);
             // console.log("-----messageObject-----:",messageObject);
         
-            // call the service
-            whatsappService.SendMessageToWhatsApp("hi divya  ..:" + text, number)
+            // // call the service
+            // whatsappService.SendMessageToWhatsApp("hi divya  ..:" + text, number)
+       
+            // call the sample model
+
+            if(text=="text"){
+                let data= SampleModel.sampleText("Hi Your msg  ..:" + text, number)
+                whatsappService.SendMessageToWhatsApp(data)
+            }else if(text=="image"){
+                let data= SampleModel.sampleImage(number)
+                whatsappService.SendMessageToWhatsApp(data)
+            }else if(text=="audio"){
+                let data= SampleModel.sampleAudio(number)
+                whatsappService.SendMessageToWhatsApp(data)
+            }else if(text=="video"){
+                let data= SampleModel.sampleVideo(number)
+                whatsappService.SendMessageToWhatsApp(data)
+            }else if(text=="document"){
+                let data= SampleModel.sampleDocument(number)
+                whatsappService.SendMessageToWhatsApp(data)
+            }else if(text=="button"){
+                let data= SampleModel.sampleButton(number)
+                whatsappService.SendMessageToWhatsApp(data)
+            }else if(text=="list"){
+                let data= SampleModel.sampleList(number)
+                whatsappService.SendMessageToWhatsApp(data)
+            }else if(text=="location"){
+                let data= SampleModel.sampleLocation(number)
+                whatsappService.SendMessageToWhatsApp(data)
+            }else{
+                let data= SampleModel.sampleText("Hi, No msg ..:", number)
+                whatsappService.SendMessageToWhatsApp(data)
+            }
+       
+       
+       
         }
        
        
