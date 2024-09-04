@@ -36,7 +36,7 @@ const RecivedMessage =(req,res)=>{
             // console.log("-----messageObject-----:",messageObject);
         
             // call the service
-            whatsappService.SendMessageToWhatsApp(text, number)
+            // whatsappService.SendMessageToWhatsApp(text, number)
         }
        
        
