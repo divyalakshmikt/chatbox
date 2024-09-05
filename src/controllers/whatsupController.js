@@ -103,6 +103,8 @@ const RecivedMessage = async(req,res)=>{
 
             let text =  GetTextUser(messages)
         
+            console.log("---text-----:",text);
+            console.log("----number--====:", number);
             // // call the service
             // whatsappService.SendMessageToWhatsApp("hi divya  ..:" + text, number)
        
