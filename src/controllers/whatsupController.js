@@ -95,7 +95,15 @@ const RecivedMessage = async(req,res)=>{
         let value = changes["value"];
         let messageObject = value["messages"];
 
-        console.log("---body ---:", messageObject);
+        console.log("--------msg Details---------:",messageObject[0]);
+
+        // contact details
+        let contact_details = value["contacts"]
+        let contacts = contact_details[0]
+        let profile = contacts["profile"]
+        let profile_name = profile["name"]
+        console.log("------profile------:",profile);
+        console.log("-----profile_name-----:",profile_name);
 
         if(typeof messageObject != "undefined"){
             let messages = messageObject[0];
@@ -114,8 +122,6 @@ const RecivedMessage = async(req,res)=>{
             }
         }
        
-       
-
         res.send("EVENT_RECEIVED");
     } catch (error) {
         myConsole.log(error)
