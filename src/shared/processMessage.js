@@ -40,10 +40,10 @@ function Process(textUser, number){
      let model = whatsappModel.messageText("Thank you for contacting us. Please share your pick up location", number)
      models.push(model)
      }
-    //  else if(textUser.includes("hi")){
-    //      let model = whatsappModel.messageText("Hello, what can i do for you ?..", number)
-    //      models.push(model)
-    //  }
+     else if(textUser.includes("location")){
+         let model = whatsappModel.messageText("Please share the Drop-off location .", number)
+         models.push(model)
+     }
      else if(textUser.includes("bye") ||
      textUser.includes("ok") ||
      textUser.includes("good bye") || 

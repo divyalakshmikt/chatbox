@@ -149,6 +149,9 @@ function GetTextUser(messages){
         }else if(typeInteractive == "list_reply"){
            
             text = (interactiveObject["list_reply"])["title"]
+        }else if(typeInteractive == "location"){
+           
+            text = "location"
         }else{
            
             console.log("---No Messagess-----");
