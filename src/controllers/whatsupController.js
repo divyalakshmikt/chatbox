@@ -156,7 +156,7 @@ function GetTextUser(messages){
 
 
 
-    }else if(typeInteractive == "location"){
+    }else if(typeMessage == "location"){
            
         text = "location"
     }
