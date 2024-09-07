@@ -96,6 +96,7 @@ const RecivedMessage = async(req,res)=>{
         let messageObject = value["messages"];
 
         console.log("--------msg Details---------:",messageObject[0]);
+        
 
         // contact details
         let contact_details = value["contacts"]
@@ -110,6 +111,8 @@ const RecivedMessage = async(req,res)=>{
             let number = messages["from"]
 
             let text =  GetTextUser(messages)
+
+            
         
             console.log("---text-----:",text);
             console.log("----number--====:", number);
@@ -118,7 +121,7 @@ const RecivedMessage = async(req,res)=>{
        
             // call the sample model
             if(text !=""){
-              processModel.Process(text,number)
+              processModel.Process(text,number,profile_name, messages)
             }
         }
        
